@@ -309,11 +309,14 @@ const animationTimeline = () => {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 const btnStart = document.querySelector('.start-btn');
+const btnLight = document.querySelector('.light-btn');
 const firstContainer = document.querySelector('.first-container');
 const mainContainer = document.querySelector('.container');
 
 btnStart.addEventListener('click', function () {
-  firstContainer.classList.add('hidden');
-  mainContainer.classList.remove('hidden');
-  fetchData();
+  // firstContainer.classList.add('hidden');
+  // mainContainer.classList.remove('hidden');
+  btnLight.classList.remove('hidden');
+  btnStart.classList.add('hidden');
 });
+// fetchData();

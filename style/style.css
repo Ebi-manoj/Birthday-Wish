@@ -307,21 +307,35 @@ body {
   height: 100vh;
   background-color: black;
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 10;
 }
 .my-btn {
-  background-color: rgb(253, 190, 0);
+  background-color: #f7d05a;
   color: black;
   font-size: 17px;
   border-radius: 15px;
   padding: 10px;
   outline: 0;
-  border: none;
+  border: 0;
   font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
 }
 .start-btn {
   display: block;
+}
+
+.my-btn:hover {
+  background-color: #f9e5a6;
+}
+
+.my-btn:active {
+  transform: translate(-50%, -7px);
+  border: 1px solid #f9c119;
+}
+.light-on {
+  background-color: #f9ebc2;
 }
