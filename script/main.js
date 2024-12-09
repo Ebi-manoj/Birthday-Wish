@@ -471,9 +471,8 @@ const startFireworks = function () {
     birthday.update(delta / 1000);
   })();
 };
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////VARIABLES
 const btnStart = document.querySelector('.start-btn');
 const btnLight = document.querySelector('.light-btn');
 const btnNo = document.querySelector('.no-btn');
@@ -481,6 +480,59 @@ const btnYes = document.querySelector('.yes-btn');
 const firstContainer = document.querySelector('.first-container');
 const mainContainer = document.querySelector('.container');
 const heading = document.querySelector('.first-heading');
+/////////////////////////////////////////////////////////////////////////////////////////////////
+///////////CLOCK
+
+var target_date = new Date('December 09, 2024 22:42:59').getTime(); // set the countdown date
+var days, hours, minutes, seconds; // variables for time units
+var countdown = document.getElementById('tiles'); // get tag element
+const clock = document.querySelector('.clock');
+
+const startCountoDown = function () {
+  const countdownInterval = setInterval(function () {
+    // find the amount of "seconds" between now and target
+    var current_date = new Date().getTime();
+    var seconds_left = (target_date - current_date) / 1000;
+    const timeLeft = target_date - current_date;
+    days = pad(parseInt(seconds_left / 86400));
+    seconds_left = seconds_left % 86400;
+
+    hours = pad(parseInt(seconds_left / 3600));
+    seconds_left = seconds_left % 3600;
+
+    minutes = pad(parseInt(seconds_left / 60));
+    seconds = pad(parseInt(seconds_left % 60));
+
+    // format countdown string + set tag value
+    countdown.innerHTML =
+      '<span>' +
+      days +
+      '</span><span>' +
+      hours +
+      '</span><span>' +
+      minutes +
+      '</span><span>' +
+      seconds +
+      '</span>';
+
+    function pad(n) {
+      return (n < 10 ? '0' : '') + n;
+    }
+    if (timeLeft < 0) {
+      clearInterval(countdownInterval);
+      clock.classList.add('hidden');
+      heading.classList.add('fade-in');
+      setTimeout(() => {
+        heading.textContent = '';
+        heading.classList.remove('fade-in');
+        heading.textContent = 'TURN THE LIGHTS ON💡';
+        btnLight.classList.remove('hidden');
+      }, 1000);
+    }
+  }, 1000);
+};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 btnStart.addEventListener('click', function () {
   btnStart.classList.add('hidden');
@@ -513,8 +565,9 @@ btnYes.addEventListener('click', function () {
   setTimeout(() => {
     heading.textContent = '';
     heading.classList.remove('fade-in');
-    heading.textContent = 'TURN THE LIGHTS ON💡';
-    btnLight.classList.remove('hidden');
+    heading.textContent = 'Special Day in...😁';
+    clock.classList.remove('hidden');
+    startCountoDown();
   }, 3000);
 });
 
@@ -537,3 +590,5 @@ btnNo.addEventListener('mouseenter', () => {
   btnNo.style.top = `${randomY}px`;
 });
 // fetchData();
+
+///////////////////////////////////////
