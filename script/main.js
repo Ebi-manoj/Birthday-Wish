@@ -304,4 +304,16 @@ const animationTimeline = () => {
 };
 
 // Run fetch and animation in sequence
-fetchData();
+// fetchData();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+const btnStart = document.querySelector('.start-btn');
+const firstContainer = document.querySelector('.first-container');
+const mainContainer = document.querySelector('.container');
+
+btnStart.addEventListener('click', function () {
+  firstContainer.classList.add('hidden');
+  mainContainer.classList.remove('hidden');
+  fetchData();
+});
