@@ -302,6 +302,17 @@ body {
 .hidden {
   visibility: hidden;
 }
+.first-heading {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  margin-top: 7%;
+  font-size: 50px;
+  font-weight: 500;
+  z-index: 20;
+}
 .first-container {
   width: 100%;
   height: 100vh;
@@ -312,7 +323,7 @@ body {
 .my-btn {
   background-color: #f7d05a;
   color: black;
-  font-size: 17px;
+  font-size: 12px;
   border-radius: 15px;
   padding: 10px;
   outline: 0;
@@ -336,6 +347,12 @@ body {
   transform: translate(-50%, -7px);
   border: 1px solid #f9c119;
 }
-.light-on {
-  background-color: #f9ebc2;
+
+/* .......................................................... */
+
+.abc {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
 }
