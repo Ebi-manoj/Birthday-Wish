@@ -480,10 +480,11 @@ const btnYes = document.querySelector('.yes-btn');
 const firstContainer = document.querySelector('.first-container');
 const mainContainer = document.querySelector('.container');
 const heading = document.querySelector('.first-heading');
+const music = document.querySelector('.music');
 /////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////CLOCK
 
-var target_date = new Date('December 09, 2024 22:42:59').getTime(); // set the countdown date
+var target_date = new Date('December 10, 2024 00:43:59').getTime(); // set the countdown date
 var days, hours, minutes, seconds; // variables for time units
 var countdown = document.getElementById('tiles'); // get tag element
 const clock = document.querySelector('.clock');
@@ -570,11 +571,14 @@ btnYes.addEventListener('click', function () {
     startCountoDown();
   }, 3000);
 });
-
+/////////////////////////////////////////////
+//////BTN LIGHT
 btnLight.addEventListener('click', function () {
+  music.play();
   heading.textContent = '';
   startFireworks();
   btnLight.classList.add('hidden');
+  loadWishes();
 });
 btnNo.addEventListener('mouseenter', () => {
   // Get the dimensions of the container
@@ -590,5 +594,12 @@ btnNo.addEventListener('mouseenter', () => {
   btnNo.style.top = `${randomY}px`;
 });
 // fetchData();
+function loadWishes() {
+  setTimeout(() => {
+    firstContainer.classList.add('hidden');
+    mainContainer.classList.remove('hidden');
+    fetchData();
+  }, 10000);
+}
 
 ///////////////////////////////////////
