@@ -484,7 +484,7 @@ const music = document.querySelector('.music');
 /////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////CLOCK
 
-var target_date = new Date('December 10, 2024 00:43:59').getTime(); // set the countdown date
+var target_date = new Date('December 10, 2024 01:41:59').getTime(); // set the countdown date
 var days, hours, minutes, seconds; // variables for time units
 var countdown = document.getElementById('tiles'); // get tag element
 const clock = document.querySelector('.clock');
@@ -535,7 +535,9 @@ const startCountoDown = function () {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-btnStart.addEventListener('click', function () {
+btnStart.addEventListener('click', function (e) {
+  console.log(e.target);
+
   btnStart.classList.add('hidden');
   setTimeout(() => {
     heading.classList.add('fade-in');

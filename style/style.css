@@ -382,6 +382,12 @@ body {
   opacity: 0;
   transform: translate(-50%, -80%);
 }
+.lydia-dp {
+  width: 400px !important;
+  height: 400px !important;
+  object-fit: cover;
+  background-size: cover;
+}
 
 /* .......................................................... */
 
