@@ -312,6 +312,7 @@ body {
   font-size: 50px;
   font-weight: 500;
   z-index: 20;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .first-container {
   width: 100%;
@@ -335,6 +336,28 @@ body {
   transform: translate(-50%, -50%);
   transition: all 0.3s;
 }
+.my-btn2 {
+  background-color: #f7d05a;
+  color: black;
+  font-size: 12px;
+  border-radius: 15px;
+  padding: 10px;
+  outline: 0;
+  border: 0;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+  width: 70px;
+}
+.no-btn {
+  left: 43%;
+  background-color: red;
+}
+.yes-btn {
+  left: 52%;
+}
 .start-btn {
   display: block;
 }
@@ -346,6 +369,18 @@ body {
 .my-btn:active {
   transform: translate(-50%, -7px);
   border: 1px solid #f9c119;
+}
+.yes-btn:hover {
+  background-color: #f9e5a6;
+}
+
+.yes-btn:active {
+  transform: translate(-50%, -7px);
+  border: 1px solid #f9c119;
+}
+.fade-in {
+  opacity: 0;
+  transform: translate(-50%, -80%);
 }
 
 /* .......................................................... */

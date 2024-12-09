@@ -476,17 +476,46 @@ const startFireworks = function () {
 
 const btnStart = document.querySelector('.start-btn');
 const btnLight = document.querySelector('.light-btn');
+const btnNo = document.querySelector('.no-btn');
+const btnYes = document.querySelector('.yes-btn');
 const firstContainer = document.querySelector('.first-container');
 const mainContainer = document.querySelector('.container');
 const heading = document.querySelector('.first-heading');
 
 btnStart.addEventListener('click', function () {
-  // firstContainer.classList.add('hidden');
-  // mainContainer.classList.remove('hidden');
-  btnLight.classList.remove('hidden');
   btnStart.classList.add('hidden');
+  setTimeout(() => {
+    heading.classList.add('fade-in');
+  }, 400);
   heading.textContent = '';
-  heading.textContent = 'TURN THE LIGHT ON💡';
+  setTimeout(() => {
+    heading.textContent = 'DO YOU LOVE ME😊';
+    heading.classList.remove('fade-in');
+    btnNo.classList.remove('hidden');
+    btnYes.classList.remove('hidden');
+  }, 700);
+});
+
+btnYes.addEventListener('click', function () {
+  btnNo.classList.add('hidden');
+  btnYes.classList.add('hidden');
+  heading.classList.add('fade-in');
+
+  heading.textContent = '';
+  setTimeout(() => {
+    heading.textContent = 'I KNOW THAT 😏';
+    heading.classList.remove('fade-in');
+  }, 700);
+  setTimeout(() => {
+    heading.classList.add('fade-in');
+  }, 2000);
+
+  setTimeout(() => {
+    heading.textContent = '';
+    heading.classList.remove('fade-in');
+    heading.textContent = 'TURN THE LIGHTS ON💡';
+    btnLight.classList.remove('hidden');
+  }, 3000);
 });
 
 btnLight.addEventListener('click', function () {
@@ -494,5 +523,17 @@ btnLight.addEventListener('click', function () {
   startFireworks();
   btnLight.classList.add('hidden');
 });
+btnNo.addEventListener('mouseenter', () => {
+  // Get the dimensions of the container
+  const containerWidth = firstContainer.offsetWidth;
+  const containerHeight = firstContainer.offsetHeight;
 
+  // Generate random positions within the container
+  const randomX = Math.random() * (containerWidth - btnNo.offsetWidth);
+  const randomY = Math.random() * (containerHeight - btnNo.offsetHeight);
+
+  // Apply the random positions
+  btnNo.style.left = `${randomX}px`;
+  btnNo.style.top = `${randomY}px`;
+});
 // fetchData();
