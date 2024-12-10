@@ -484,7 +484,7 @@ const music = document.querySelector('.music');
 /////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////CLOCK
 
-var target_date = new Date('December 10, 2024 01:41:59').getTime(); // set the countdown date
+var target_date = new Date('December 11, 2024 23:59:59').getTime(); // set the countdown date
 var days, hours, minutes, seconds; // variables for time units
 var countdown = document.getElementById('tiles'); // get tag element
 const clock = document.querySelector('.clock');
